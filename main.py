@@ -20,7 +20,7 @@ load_dotenv()
 print("Mengambil data dari Supabase...")
 url     = os.environ["SUPABASE_URL"] + "/rest/v1/responses?select=*&order=id.asc"
 headers = {
-    "apikey":        os.environ["SUPABASE_KEY"],   # kunci autentikasi Supabase
+    "apikey":        os.environ["SUPABASE_KEY"],   # kunci autentikasi Supabas
     "Authorization": "Bearer " + os.environ["SUPABASE_KEY"],
 }
 resp    = requests.get(url, headers=headers)
