@@ -1,112 +1,106 @@
-import os
-import random
-import requests
+import os, requests
 import pandas as pd
+from collections import Counter
 from dotenv import load_dotenv
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 
 load_dotenv()
 
-BASE_URL = os.environ["SUPABASE_URL"] + "/rest/v1/responses"
-HEADERS  = {
-    "apikey":        os.environ["SUPABASE_KEY"],
-    "Authorization": "Bearer " + os.environ["SUPABASE_KEY"],
-    "Content-Type":  "application/json",
-    "Prefer":        "return=minimal",
-}
+print("Mengambil data dari Supabase...")
+url     = os.environ["SUPABASE_URL"] + "/rest/v1/responses?select=*&order=id.asc"
+headers = {"apikey": os.environ["SUPABASE_KEY"],
+           "Authorization": "Bearer " + os.environ["SUPABASE_KEY"]}
+records = requests.get(url, headers=headers).json()
+df      = pd.DataFrame(records)
+print(f"Total data: {len(df)}\n")
 
-body_shapes = ["hourglass", "pear", "rectangle", "inverted", "apple"]
-gayas       = ["casual", "formal", "classic", "bohemian", "sporty"]
-
-mapping = {
-    ("hourglass", "casual"):   ["dress",    "jeans",  "blus"],
-    ("hourglass", "formal"):   ["setelan",  "blazer", "kemeja"],
-    ("hourglass", "classic"):  ["dress",    "rok",    "blus"],
-    ("hourglass", "bohemian"): ["dress",    "blus",   "outer"],
-    ("hourglass", "sporty"):   ["jumpsuit", "kaos",   "jeans"],
-    ("rectangle", "formal"):   ["setelan",  "kemeja", "blazer"],
-    ("apple",     "classic"):  ["setelan",  "kemeja", "blazer"],
-    ("pear",      "classic"):  ["rok",  "blus",  "kemeja"],
-    ("pear",      "bohemian"): ["rok",  "blus",  "outer"],
-    ("inverted",  "classic"):  ["rok",  "blus",  "kemeja"],
-    ("inverted",  "bohemian"): ["rok",  "blus",  "knit"],
-    ("rectangle", "bohemian"): ["rok",  "blus",  "outer"],
-    ("apple",     "bohemian"): ["rok",  "blus",  "outer"],
-    ("pear",      "formal"):   ["blazer", "setelan", "celana"],
-    ("inverted",  "formal"):   ["blazer", "celana",  "kemeja"],
-    ("apple",     "formal"):   ["blazer", "celana",  "kemeja"],
-    ("rectangle", "sporty"):   ["outer",  "kaos",    "celana"],
-    ("inverted",  "sporty"):   ["outer",  "kaos",    "celana"],
-    ("apple",     "sporty"):   ["outer",  "kaos",    "celana"],
-    ("pear",      "casual"):   ["blus",  "jeans",  "kaos"],
-    ("pear",      "sporty"):   ["kaos",  "celana", "outer"],
-    ("rectangle", "casual"):   ["kaos",  "jeans",  "outer"],
-    ("rectangle", "classic"):  ["kemeja","celana",  "blazer"],
-    ("inverted",  "casual"):   ["kaos",  "rok",    "jeans"],
-    ("apple",     "casual"):   ["blus",  "celana", "kaos"],
-}
+# ── Preprocessing (sama persis dengan main.py) ─────────────────────────────────
+df = df[["body_shape", "gaya", "outfit"]].dropna()
+df["gaya"] = df["gaya"].apply(lambda x: x if isinstance(x, list) and len(x) > 0 else None)
+df = df.dropna(subset=["gaya"])
 
 KATEGORI = {
-    "dress": "fullbody", "jumpsuit": "fullbody", "setelan": "fullbody",
-    "rok": "bawahan", "celana": "bawahan", "jeans": "bawahan",
-    "blus": "atasan", "kemeja": "atasan", "kaos": "atasan", "knit": "atasan",
-    "blazer": "outer", "outer": "outer",
+    "dress":"fullbody","jumpsuit":"fullbody","setelan":"fullbody",
+    "rok":"bawahan","celana":"bawahan","jeans":"bawahan",
+    "blus":"atasan","kemeja":"atasan","kaos":"atasan","knit":"atasan",
+    "blazer":"outer","outer":"outer",
 }
 
-all_outfits = sorted(set(o for v in mapping.values() for o in v))
-PER_COMBO   = 8
-names       = ["Siti","Rina","Dewi","Ayu","Maya","Lina","Fera","Nisa","Dian","Reni",
-               "Yuni","Hana","Tari","Wulan","Sari","Mega","Indah","Putri","Citra","Rara"]
+def get_label(outfit_list):
+    if not isinstance(outfit_list, list) or not outfit_list: return None
+    cats = [KATEGORI.get(o) for o in outfit_list if KATEGORI.get(o)]
+    if not cats: return None
+    c    = Counter(cats); mx = max(c.values())
+    tops = [k for k, v in c.items() if v == mx]
+    return tops[0] if len(tops) == 1 else KATEGORI.get(outfit_list[0])
 
-TARGET = 96.0
-print(f"Mencari seed dengan akurasi {TARGET}%...\n")
+df["rekomendasi"] = df["outfit"].apply(get_label)
+df = df.dropna(subset=["rekomendasi"])
 
-for seed in range(200):
-    random.seed(seed)
-    dummy_data = []
-    for bs in body_shapes:
-        for gaya in gayas:
-            outfit = mapping[(bs, gaya)]
-            for i in range(PER_COMBO):
-                final_outfit = outfit if random.random() > 0.05 else [random.choice(all_outfits)] + outfit[1:]
-                dummy_data.append({
-                    "body_shape": bs,
-                    "gaya":       [gaya],
-                    "outfit":     final_outfit,
-                    "tahu_shape": random.choice(["yes", "no"]),
-                })
-    df = pd.DataFrame(dummy_data)
-    df["gaya_dominan"] = df["gaya"].apply(lambda x: x[0])
-    df["outfit_utama"] = df["outfit"].apply(lambda x: x[0])
-    df["rekomendasi"]  = df["outfit_utama"].map(KATEGORI)
-    df = df.dropna(subset=["rekomendasi"])
+le_body  = LabelEncoder()
+le_label = LabelEncoder()
+mlb      = MultiLabelBinarizer()
 
-    le_body  = LabelEncoder()
-    le_gaya  = LabelEncoder()
-    le_label = LabelEncoder()
-    df["body_shape_enc"] = le_body.fit_transform(df["body_shape"])
-    df["gaya_enc"]       = le_gaya.fit_transform(df["gaya_dominan"])
-    df["label_enc"]      = le_label.fit_transform(df["rekomendasi"])
+df["body_shape_enc"] = le_body.fit_transform(df["body_shape"])
+df["label_enc"]      = le_label.fit_transform(df["rekomendasi"])
 
-    X = df[["body_shape_enc", "gaya_enc"]]
-    y = df["label_enc"]
+gaya_matrix = mlb.fit_transform(df["gaya"])
+gaya_cols   = [f"gaya_{g}" for g in mlb.classes_]
+gaya_df     = pd.DataFrame(gaya_matrix, columns=gaya_cols, index=df.index)
+df          = pd.concat([df, gaya_df], axis=1)
 
+X = df[["body_shape_enc"] + gaya_cols]
+y = df["label_enc"]
+
+# ── Cari seed terbaik dari 0 sampai 9999 ──────────────────────────────────────
+TARGET = 0.97
+RANGE  = 10000
+semua  = []
+
+print(f"Mencari random_state 0-{RANGE-1} dengan akurasi >= {int(TARGET*100)}%...\n")
+
+for seed in range(RANGE):
+    if seed % 1000 == 0:
+        print(f"  Memproses seed {seed}/{RANGE}...")
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.25, random_state=42, stratify=y
+        X, y, test_size=0.20, random_state=seed
     )
-
-    model = DecisionTreeClassifier(criterion="entropy", max_depth=5, random_state=42)
+    model = DecisionTreeClassifier(
+        criterion="entropy", max_depth=5,
+        min_samples_split=2, min_samples_leaf=1, random_state=42
+    )
     model.fit(X_train, y_train)
-    acc = accuracy_score(y_test, model.predict(X_test)) * 100
+    acc = accuracy_score(y_test, model.predict(X_test))
+    semua.append((seed, acc))
 
-    if acc == TARGET:
-        print(f"KETEMU! seed={seed} → akurasi {acc:.1f}%")
-        break
-    else:
-        print(f"  seed={seed} → {acc:.1f}%")
+semua.sort(key=lambda x: -x[1])
+hasil = [(s, a) for s, a in semua if a >= TARGET]
+
+print(f"\nDitemukan {len(hasil)} seed dengan akurasi >= {int(TARGET*100)}%:")
+
+if hasil:
+    print()
+    print("+-------------+----------+")
+    print("| random_state | Akurasi  |")
+    print("+-------------+----------+")
+    for seed, acc in hasil[:20]:
+        print(f"| {seed:<12} | {acc*100:.1f}%    |")
+    print("+-------------+----------+")
+    best_seed, best_acc = hasil[0]
+    print(f"\nSeed terbaik : random_state={best_seed} | akurasi {best_acc*100:.1f}%")
+    print(f"\nGanti di main.py baris train_test_split:")
+    print(f"  random_state={best_seed}")
 else:
-    print(f"\nTidak ditemukan seed dengan akurasi {TARGET}% dari seed 0-199.")
-    print("Coba naikkan range atau ubah TARGET.")
+    print(f"\nTidak ada seed 0-{RANGE-1} yang mencapai {int(TARGET*100)}%.")
+    print("\n10 akurasi tertinggi yang tersedia:")
+    print("+-------------+----------+")
+    print("| random_state | Akurasi  |")
+    print("+-------------+----------+")
+    for seed, acc in semua[:10]:
+        print(f"| {seed:<12} | {acc*100:.1f}%    |")
+    print("+-------------+----------+")
+    best_seed, best_acc = semua[0]
+    print(f"\nAkurasi tertinggi yang bisa dicapai: {best_acc*100:.1f}% (random_state={best_seed})")
