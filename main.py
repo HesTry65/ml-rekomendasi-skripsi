@@ -90,27 +90,68 @@ KATEGORI = {
     "kaos":   "atasan",
     "knit":   "atasan",
 
-    # Outer: pakaian luar yang dipakai di atas atasan sebagai layer tambahan
+    # Outer: pakaian luar yang dipakai di atas atasan sebagai layer tambahank
     "blazer": "outer",
     "outer":  "outer",
 }
 
-# Mapping gaya → item spesifik per kategori (untuk mix and match)
-GAYA_ITEM = {
-    "bohemian": {"atasan": ["blus", "knit"],        "bawahan": ["rok"],             "fullbody": ["dress"],           "outer": ["outer"]},
-    "casual":   {"atasan": ["kaos", "blus"],         "bawahan": ["jeans", "celana"], "fullbody": ["dress", "jumpsuit"],"outer": ["outer"]},
-    "classic":  {"atasan": ["kemeja", "blus"],       "bawahan": ["celana", "rok"],   "fullbody": ["setelan"],         "outer": ["blazer"]},
-    "formal":   {"atasan": ["kemeja"],               "bawahan": ["celana"],          "fullbody": ["setelan"],         "outer": ["blazer"]},
-    "sporty":   {"atasan": ["kaos"],                 "bawahan": ["celana"],          "fullbody": ["jumpsuit"],        "outer": ["outer"]},
+# Mapping item spesifik per body shape + gaya + kategori
+# Referensi:
+# - Kostogryz, M. (2026). Types of Female Body Shapes: A Comparative Analysis of
+#   Styling Strategies. European Journal of Interdisciplinary Issues, 3(1).
+#   https://doi.org/10.5281/zenodo.20079615
+# - Rode et al. (2024). Outfit Recommendation System Based On Body Shape. IJCRT.
+#   https://ijcrt.org/papers/IJCRTAF02085.pdf
+BODY_GAYA_ITEM = {
+    # Apple: empire waist, A-line, flowy — sembunyikan area perut
+    "apple": {
+        "bohemian": {"atasan": ["blus flowy", "tunik"],          "bawahan": ["rok A-line"],                    "fullbody": ["dress wrap", "dress empire"],       "outer": ["cardigan panjang"]},
+        "casual":   {"atasan": ["kaos oversize", "blus flowy"],  "bawahan": ["celana bootcut", "rok A-line"],  "fullbody": ["dress A-line", "jumpsuit longgar"],  "outer": ["outer panjang"]},
+        "classic":  {"atasan": ["blus empire", "kemeja flowy"],  "bawahan": ["celana bootcut", "rok A-line"],  "fullbody": ["setelan blazer panjang"],            "outer": ["blazer panjang"]},
+        "formal":   {"atasan": ["kemeja empire"],                "bawahan": ["celana bootcut"],                "fullbody": ["setelan blazer panjang"],            "outer": ["blazer panjang"]},
+        "sporty":   {"atasan": ["kaos oversize"],                "bawahan": ["celana wide-leg"],               "fullbody": ["jumpsuit longgar"],                  "outer": ["outer panjang"]},
+    },
+    # Hourglass: fitted, wrap, define waist — tonjolkan lekukan alami
+    "hourglass": {
+        "bohemian": {"atasan": ["blus wrap", "knit fitted"],     "bawahan": ["rok midi", "rok wrap"],          "fullbody": ["dress wrap", "dress fitted"],        "outer": ["outer berpotongan"]},
+        "casual":   {"atasan": ["kaos fitted", "blus tucked-in"],"bawahan": ["jeans skinny", "celana straight"],"fullbody": ["dress wrap", "jumpsuit fitted"],    "outer": ["outer fitted"]},
+        "classic":  {"atasan": ["kemeja tucked-in", "blus fitted"],"bawahan": ["rok pencil", "celana straight"],"fullbody": ["setelan fitted"],                  "outer": ["blazer fitted"]},
+        "formal":   {"atasan": ["kemeja tucked-in"],             "bawahan": ["rok pencil"],                    "fullbody": ["setelan fitted"],                    "outer": ["blazer fitted"]},
+        "sporty":   {"atasan": ["kaos fitted"],                  "bawahan": ["celana straight", "legging"],    "fullbody": ["jumpsuit fitted"],                   "outer": ["outer fitted"]},
+    },
+    # Inverted Triangle: tambah volume bawah, minimalkan area bahu
+    "inverted": {
+        "bohemian": {"atasan": ["blus basic", "knit V-neck"],    "bawahan": ["rok flared", "rok A-line"],      "fullbody": ["dress A-line", "dress flared"],      "outer": ["cardigan panjang"]},
+        "casual":   {"atasan": ["kaos V-neck", "blus simple"],   "bawahan": ["celana wide-leg", "jeans flared"],"fullbody": ["dress A-line", "jumpsuit lebar bawah"],"outer": ["cardigan panjang"]},
+        "classic":  {"atasan": ["kemeja V-neck", "blus basic"],  "bawahan": ["celana wide-leg", "rok A-line"], "fullbody": ["setelan rok flared"],                "outer": ["blazer single button"]},
+        "formal":   {"atasan": ["kemeja V-neck"],                "bawahan": ["celana wide-leg"],               "fullbody": ["setelan rok flared"],                "outer": ["blazer single button"]},
+        "sporty":   {"atasan": ["kaos V-neck"],                  "bawahan": ["celana wide-leg", "celana palazzo"],"fullbody": ["jumpsuit lebar bawah"],           "outer": ["cardigan panjang"]},
+    },
+    # Pear: tambah detail/volume di atas, seimbangkan bahu & pinggul
+    "pear": {
+        "bohemian": {"atasan": ["blus ruffle", "knit off-shoulder"],"bawahan": ["rok A-line", "rok flared"],   "fullbody": ["dress A-line", "dress wrap"],        "outer": ["outer bahu tegas"]},
+        "casual":   {"atasan": ["kaos grafis", "blus off-shoulder"],"bawahan": ["celana wide-leg", "rok A-line"],"fullbody": ["dress A-line", "jumpsuit bahu lebar"],"outer": ["outer bahu tegas"]},
+        "classic":  {"atasan": ["kemeja berdetail dada", "blus berdetail bahu"],"bawahan": ["celana wide-leg", "rok midi flared"],"fullbody": ["setelan atasan berdetail"],"outer": ["blazer bahu tegas"]},
+        "formal":   {"atasan": ["kemeja berdetail bahu"],        "bawahan": ["celana wide-leg"],               "fullbody": ["setelan atasan berdetail"],          "outer": ["blazer bahu tegas"]},
+        "sporty":   {"atasan": ["kaos grafis dada", "kaos bahu lebar"],"bawahan": ["celana wide-leg", "celana palazzo"],"fullbody": ["jumpsuit bahu lebar"],      "outer": ["outer bahu tegas"]},
+    },
+    # Rectangle: ciptakan lekukan — crop, peplum, tied, flared
+    "rectangle": {
+        "bohemian": {"atasan": ["blus ruffle", "knit peplum"],   "bawahan": ["rok flared", "rok ruffled"],     "fullbody": ["dress wrap", "dress berpotongan"],   "outer": ["outer cropped"]},
+        "casual":   {"atasan": ["kaos crop", "blus tied"],       "bawahan": ["rok flared", "celana wide-leg"], "fullbody": ["dress wrap", "jumpsuit ikat pinggang"],"outer": ["outer cropped"]},
+        "classic":  {"atasan": ["kemeja peplum", "blus tucked-in"],"bawahan": ["rok flared", "celana wide-leg"],"fullbody": ["setelan ikat pinggang"],            "outer": ["blazer cropped"]},
+        "formal":   {"atasan": ["kemeja peplum"],                "bawahan": ["rok flared"],                    "fullbody": ["setelan ikat pinggang"],             "outer": ["blazer cropped"]},
+        "sporty":   {"atasan": ["kaos crop", "kaos tied"],       "bawahan": ["celana wide-leg", "rok flared"], "fullbody": ["jumpsuit ikat pinggang"],            "outer": ["outer cropped"]},
+    },
 }
 
-def get_items(gaya_list, kategori):
+def get_items(body_shape: str, gaya_list: list, kategori: str) -> list:
     items = []
+    bs_map = BODY_GAYA_ITEM.get(body_shape, {})
     for g in gaya_list:
-        if g in GAYA_ITEM:
-            for item in GAYA_ITEM[g].get(kategori, []):
-                if item not in items:
-                    items.append(item)
+        for item in bs_map.get(g, {}).get(kategori, []):
+            if item not in items:
+                items.append(item)
     return items
 
 # Tentukan label rekomendasi berdasarkan kategori yang paling sering muncul
@@ -416,13 +457,13 @@ def rekomendasi(body_shape: str, gaya: list) -> dict:
         fokus    = le_label.inverse_transform([enc])[0]
 
         if fokus == "fullbody":
-            return {"fokus": fokus, "fullbody": get_items(gaya, "fullbody")}
+            return {"fokus": fokus, "fullbody": get_items(body_shape, gaya, "fullbody")}
         elif fokus == "atasan":
-            return {"fokus": fokus, "atasan": get_items(gaya, "atasan"), "bawahan": get_items(gaya, "bawahan")}
+            return {"fokus": fokus, "atasan": get_items(body_shape, gaya, "atasan"), "bawahan": get_items(body_shape, gaya, "bawahan")}
         elif fokus == "bawahan":
-            return {"fokus": fokus, "bawahan": get_items(gaya, "bawahan"), "atasan": get_items(gaya, "atasan")}
+            return {"fokus": fokus, "bawahan": get_items(body_shape, gaya, "bawahan"), "atasan": get_items(body_shape, gaya, "atasan")}
         elif fokus == "outer":
-            return {"fokus": fokus, "outer": get_items(gaya, "outer"), "atasan": get_items(gaya, "atasan"), "bawahan": get_items(gaya, "bawahan")}
+            return {"fokus": fokus, "outer": get_items(body_shape, gaya, "outer"), "atasan": get_items(body_shape, gaya, "atasan"), "bawahan": get_items(body_shape, gaya, "bawahan")}
         else:
             return {"fokus": fokus}
 
