@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleSense — Rekomendasi Outfit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:    #FBF7F2;
+      --cream:    #F0E6DB;
+      --blush:    #EDD5CB;
+      --rose:     #C49080;
+      --terra:    #B8705C;
+      --terra-dk: #9A5848;
+      --sage:     #7A9478;
+      --charcoal: #2A2420;
+      --brown:    #6B5040;
+      --muted:    #9A8578;
+      --white:    #FFFFFF;
+      --sh:  0 2px 14px rgba(42,36,32,.07);
+      --shh: 0 6px 28px rgba(42,36,32,.13);
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -15%; right: -8%;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, var(--blush) 0%, transparent 68%);
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -12%; left: -6%;
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, var(--cream) 0%, transparent 68%);
+      opacity: .55;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-wrap { margin-bottom: .6rem; }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      line-height: 1;
+      letter-spacing: .03em;
+    }
+    .brand em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--terra);
+    }
+    .brand strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .tagline {
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .3rem;
+    }
+
+    .divider {
+      width: 48px; height: 1px;
+      background: var(--rose);
+      margin: 1.6rem auto;
+    }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .55s ease forwards;
+    }
+    .step:nth-child(1) { animation-delay: .05s; }
+    .step:nth-child(2) { animation-delay: .18s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: .3rem;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.75rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── BODY SHAPE GRID ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .9rem;
+    }
+
+    @media (max-width: 640px) {
+      .body-grid { grid-template-columns: repeat(3, 1fr); }
+      .brand { font-size: 2.6rem; }
+    }
+
+    .body-card { position: relative; }
+    .body-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+    .body-card label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+      padding: 1.3rem .75rem 1rem;
+      background: var(--white);
+      border: 1.5px solid transparent;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: all .22s ease;
+      box-shadow: var(--sh);
+    }
+    .body-card label:hover {
+      border-color: var(--rose);
+      box-shadow: var(--shh);
+      transform: translateY(-3px);
+    }
+    .body-card input:checked + label {
+      border-color: var(--terra);
+      background: linear-gradient(140deg, #fff 0%, #fdf0eb 100%);
+      box-shadow: 0 4px 22px rgba(184,112,92,.2);
+    }
+    .body-card input:checked + label .sil { color: var(--terra); }
+
+    .sil {
+      width: 52px; height: 86px;
+      color: var(--blush);
+      transition: color .22s ease;
+    }
+
+    .body-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-align: center;
+      line-height: 1.2;
+    }
+    .body-sub {
+      font-size: .64rem;
+      font-weight: 300;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: .04em;
+    }
+
+    /* ── GAYA PILLS ── */
+    .gaya-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+    }
+
+    .gaya-item { position: relative; }
+    .gaya-item input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+    .gaya-item label {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .6rem 1.3rem;
+      background: var(--white);
+      border: 1.5px solid var(--cream);
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: .84rem;
+      font-weight: 400;
+      color: var(--brown);
+      transition: all .2s ease;
+      box-shadow: var(--sh);
+      user-select: none;
+    }
+    .gaya-item label:hover {
+      border-color: var(--rose);
+      color: var(--terra);
+    }
+    .gaya-item input:checked + label {
+      background: var(--terra);
+      border-color: var(--terra);
+      color: var(--white);
+      box-shadow: 0 3px 14px rgba(184,112,92,.32);
+    }
+    .gi { font-size: .95rem; }
+
+    /* ── SUBMIT ── */
+    .submit-wrap {
+      text-align: center;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeUp .55s .3s ease forwards;
+    }
+
+    .btn-rec {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .95rem 2.4rem;
+      background: var(--terra);
+      color: var(--white);
+      border: none;
+      border-radius: 100px;
+      font-family: 'Jost', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .22s ease;
+      box-shadow: 0 4px 22px rgba(184,112,92,.32);
+    }
+    .btn-rec:hover:not(:disabled) {
+      background: var(--terra-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 28px rgba(184,112,92,.4);
+    }
+    .btn-rec:active:not(:disabled) { transform: translateY(0); }
+    .btn-rec:disabled {
+      background: var(--muted);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.35);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── RESULTS ── */
+    #results {
+      display: none;
+      margin-top: 2.5rem;
+    }
+    #results.show { display: block; }
+
+    .result-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeUp .5s ease both;
+    }
+    .r-badge {
+      display: inline-block;
+      padding: .28rem 1rem;
+      background: var(--cream);
+      border-radius: 100px;
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: .7rem;
+    }
+    .r-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--charcoal);
+    }
+    .r-sub {
+      margin-top: .4rem;
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .rcard {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.4rem;
+      box-shadow: var(--sh);
+      border-top: 3px solid var(--blush);
+      animation: fadeUp .45s ease both;
+    }
+    .rcard.primary { border-top-color: var(--terra); }
+    .rcard:nth-child(2) { animation-delay: .1s; }
+    .rcard:nth-child(3) { animation-delay: .2s; }
+
+    .rcard-head {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      margin-bottom: 1rem;
+    }
+    .rcard-icon {
+      width: 34px; height: 34px;
+      background: var(--cream);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .primary .rcard-icon { background: var(--blush); }
+    .rcard-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .rcard-badge {
+      margin-left: auto;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      background: rgba(184,112,92,.1);
+      padding: .15rem .55rem;
+      border-radius: 100px;
+    }
+
+    .item-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .item-list li {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .83rem;
+      color: var(--brown);
+      font-weight: 300;
+    }
+    .item-list li::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--rose);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .primary .item-list li::before { background: var(--terra); }
+
+    .btn-reset {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 2.2rem;
+      padding: .55rem 1.4rem;
+      background: transparent;
+      border: 1.5px solid var(--rose);
+      border-radius: 100px;
+      font-family: 'Jost', sans-serif;
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--rose);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .btn-reset:hover {
+      background: var(--blush);
+      border-color: var(--terra);
+      color: var(--terra);
+    }
+
+    /* ── ERROR ── */
+    .err-box {
+      text-align: center;
+      padding: 1.4rem;
+      background: #fff5f3;
+      border: 1px solid #f5c5bc;
+      border-radius: 14px;
+      color: var(--terra-dk);
+      font-size: .88rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .72rem;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: .06em;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <div class="brand"><em>Style</em><strong>Sense</strong></div>
+    <div class="tagline">Rekomendasi Outfit · Algoritma C4.5</div>
+  </div>
+  <div class="divider"></div>
+</header>
+
+<main>
+
+  <!-- Step 1: Body Shape -->
+  <section class="step">
+    <div class="step-label">Langkah 1</div>
+    <div class="step-title">Bentuk Tubuhmu</div>
+
+    <div class="body-grid">
+
+      <!-- Apple -->
+      <div class="body-card">
+        <input type="radio" name="body_shape" id="s-apple" value="apple">
+        <label for="s-apple">
+          <svg class="sil" viewBox="0 0 60 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="9" r="8"/>
+            <rect x="26" y="17" width="8" height="5" rx="2"/>
+            <!-- Apple: wide at bust/middle, tapers top & bottom -->
+            <path d="M14,22 C7,33 5,49 8,63 C11,73 20,80 30,80 C40,80 49,73 52,63 C55,49 53,33 46,22 Z"/>
+          </svg>
+          <div class="body-name">Apel</div>
+          <div class="body-sub">Pinggang penuh</div>
+        </label>
+      </div>
+
+      <!-- Hourglass -->
+      <div class="body-card">
+        <input type="radio" name="body_shape" id="s-hourglass" value="hourglass">
+        <label for="s-hourglass">
+          <svg class="sil" viewBox="0 0 60 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="9" r="8"/>
+            <rect x="26" y="17" width="8" height="5" rx="2"/>
+            <!-- Hourglass: wide shoulders & hips, narrow waist -->
+            <path d="M9,22 C7,32 20,42 20,50 C20,58 7,68 9,78 C15,84 23,86 30,86 C37,86 45,84 51,78 C53,68 40,58 40,50 C40,42 53,32 51,22 Z"/>
+          </svg>
+          <div class="body-name">Jam Pasir</div>
+          <div class="body-sub">Pinggang kecil</div>
+        </label>
+      </div>
+
+      <!-- Inverted Triangle -->
+      <div class="body-card">
+        <input type="radio" name="body_shape" id="s-inverted" value="inverted">
+        <label for="s-inverted">
+          <svg class="sil" viewBox="0 0 60 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="9" r="8"/>
+            <rect x="26" y="17" width="8" height="5" rx="2"/>
+            <!-- Inverted: wide shoulders, narrow hips -->
+            <path d="M7,22 C9,35 20,48 22,58 C24,68 26,76 30,78 C34,76 36,68 38,58 C40,48 51,35 53,22 Z"/>
+          </svg>
+          <div class="body-name">Segitiga<br>Terbalik</div>
+          <div class="body-sub">Bahu lebar</div>
+        </label>
+      </div>
+
+      <!-- Pear -->
+      <div class="body-card">
+        <input type="radio" name="body_shape" id="s-pear" value="pear">
+        <label for="s-pear">
+          <svg class="sil" viewBox="0 0 60 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="9" r="8"/>
+            <rect x="26" y="17" width="8" height="5" rx="2"/>
+            <!-- Pear: narrow shoulders, wide hips -->
+            <path d="M21,22 C18,34 15,46 12,58 C9,68 15,79 30,80 C45,79 51,68 48,58 C45,46 42,34 39,22 Z"/>
+          </svg>
+          <div class="body-name">Pir</div>
+          <div class="body-sub">Pinggul lebar</div>
+        </label>
+      </div>
+
+      <!-- Rectangle -->
+      <div class="body-card">
+        <input type="radio" name="body_shape" id="s-rectangle" value="rectangle">
+        <label for="s-rectangle">
+          <svg class="sil" viewBox="0 0 60 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="9" r="8"/>
+            <rect x="26" y="17" width="8" height="5" rx="2"/>
+            <!-- Rectangle: uniform width throughout -->
+            <path d="M17,22 C14,34 14,48 15,60 C16,70 22,78 30,78 C38,78 44,70 45,60 C46,48 46,34 43,22 Z"/>
+          </svg>
+          <div class="body-name">Persegi<br>Panjang</div>
+          <div class="body-sub">Proporsional</div>
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Step 2: Gaya -->
+  <section class="step">
+    <div class="step-label">Langkah 2</div>
+    <div class="step-title">Gaya Pakaianmu</div>
+
+    <div class="gaya-grid">
+      <div class="gaya-item">
+        <input type="checkbox" id="g-bohemian" value="bohemian" name="gaya">
+        <label for="g-bohemian"><span class="gi">🌸</span>Bohemian</label>
+      </div>
+      <div class="gaya-item">
+        <input type="checkbox" id="g-casual" value="casual" name="gaya">
+        <label for="g-casual"><span class="gi">👟</span>Kasual</label>
+      </div>
+      <div class="gaya-item">
+        <input type="checkbox" id="g-classic" value="classic" name="gaya">
+        <label for="g-classic"><span class="gi">💎</span>Klasik</label>
+      </div>
+      <div class="gaya-item">
+        <input type="checkbox" id="g-formal" value="formal" name="gaya">
+        <label for="g-formal"><span class="gi">👔</span>Formal</label>
+      </div>
+      <div class="gaya-item">
+        <input type="checkbox" id="g-sporty" value="sporty" name="gaya">
+        <label for="g-sporty"><span class="gi">⚡</span>Sporty</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit -->
+  <div class="submit-wrap">
+    <button class="btn-rec" id="submitBtn" onclick="getRecommendation()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      Dapatkan Rekomendasi
+    </button>
+  </div>
+
+  <!-- Results -->
+  <div id="results">
+    <div class="divider" style="margin-top:2.5rem;"></div>
+    <div id="resultContent"></div>
+    <div style="text-align:center;">
+      <button class="btn-reset" onclick="resetForm()">↺ &nbsp;Coba Lagi</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>StyleSense &nbsp;·&nbsp; Sistem Rekomendasi Outfit C4.5 &nbsp;·&nbsp; Skripsi 2026</footer>
+
+<script>
+  const FOCUS_INFO = {
+    fullbody: { label: 'Pakaian Lengkap',  emoji: '👗', desc: 'Satu pakaian yang menutupi seluruh tubuh sekaligus' },
+    atasan:   { label: 'Atasan Jadi Kunci', emoji: '👚', desc: 'Pilih atasan yang menonjol, padukan bawahan netral' },
+    bawahan:  { label: 'Bawahan Jadi Kunci', emoji: '👖', desc: 'Pilih bawahan yang statement, padukan atasan sederhana' },
+    outer:    { label: 'Outer Jadi Kunci',  emoji: '🧥', desc: 'Lapisan luar memberi karakter pada keseluruhan penampilan' },
+  };
+
+  const CAT_LABEL = { fullbody: 'Pakaian Lengkap', atasan: 'Atasan', bawahan: 'Bawahan', outer: 'Outer' };
+  const CAT_ICON  = { fullbody: '👗', atasan: '👚', bawahan: '👖', outer: '🧥' };
+  const BS_NAME   = { apple: 'Apel', hourglass: 'Jam Pasir', inverted: 'Segitiga Terbalik', pear: 'Pir', rectangle: 'Persegi Panjang' };
+
+  const BTN_INNER_DEFAULT = `
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+    Dapatkan Rekomendasi`;
+
+  async function getRecommendation() {
+    const bodyShape = document.querySelector('input[name="body_shape"]:checked')?.value;
+    const gayaArr   = [...document.querySelectorAll('input[name="gaya"]:checked')].map(el => el.value);
+
+    if (!bodyShape) { alert('Mohon pilih bentuk tubuh terlebih dahulu.'); return; }
+    if (!gayaArr.length) { alert('Mohon pilih minimal satu gaya pakaian.'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<div class="spinner"></div> Memproses…';
+
+    try {
+      const res  = await fetch('/recommend', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ body_shape: bodyShape, gaya: gayaArr }),
+      });
+      const data = await res.json();
+
+      if (!res.ok || data.error) { showError(data.error || 'Terjadi kesalahan server.'); return; }
+      showResult(data, bodyShape);
+
+    } catch {
+      showError('Gagal terhubung ke server. Pastikan server Flask sudah berjalan.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = BTN_INNER_DEFAULT;
+    }
+  }
+
+  function buildCards(data) {
+    const { fokus } = data;
+    let cards = [];
+    if (fokus === 'fullbody') {
+      cards = [{ key: 'fullbody', primary: true, items: data.fullbody || [] }];
+    } else if (fokus === 'atasan') {
+      cards = [
+        { key: 'atasan',  primary: true,  items: data.atasan  || [] },
+        { key: 'bawahan', primary: false, items: data.bawahan || [] },
+      ];
+    } else if (fokus === 'bawahan') {
+      cards = [
+        { key: 'bawahan', primary: true,  items: data.bawahan || [] },
+        { key: 'atasan',  primary: false, items: data.atasan  || [] },
+      ];
+    } else if (fokus === 'outer') {
+      cards = [
+        { key: 'outer',   primary: true,  items: data.outer   || [] },
+        { key: 'atasan',  primary: false, items: data.atasan  || [] },
+        { key: 'bawahan', primary: false, items: data.bawahan || [] },
+      ];
+    }
+    return cards;
+  }
+
+  function showResult(data, bodyShape) {
+    const info = FOCUS_INFO[data.fokus] || { label: data.fokus, emoji: '✨', desc: '' };
+    const cards = buildCards(data);
+
+    const cardsHtml = cards.map(c => `
+      <div class="rcard ${c.primary ? 'primary' : ''}">
+        <div class="rcard-head">
+          <div class="rcard-icon">${CAT_ICON[c.key] || '✨'}</div>
+          <div class="rcard-name">${CAT_LABEL[c.key] || c.key}</div>
+          ${c.primary ? '<span class="rcard-badge">Utama</span>' : ''}
+        </div>
+        <ul class="item-list">
+          ${c.items.length
+            ? c.items.map(i => `<li>${cap(i)}</li>`).join('')
+            : '<li style="color:var(--muted)">—</li>'}
+        </ul>
+      </div>`).join('');
+
+    document.getElementById('resultContent').innerHTML = `
+      <div class="result-intro">
+        <div class="r-badge">Hasil untuk bentuk ${BS_NAME[bodyShape] || bodyShape}</div>
+        <div class="r-title">${info.emoji}&nbsp; ${info.label}</div>
+        <div class="r-sub">${info.desc}</div>
+      </div>
+      <div class="result-cards">${cardsHtml}</div>`;
+
+    const el = document.getElementById('results');
+    el.classList.add('show');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function showError(msg) {
+    document.getElementById('resultContent').innerHTML =
+      `<div class="err-box">⚠️ ${msg}</div>`;
+    document.getElementById('results').classList.add('show');
+  }
+
+  function resetForm() {
+    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => el.checked = false);
+    const el = document.getElementById('results');
+    el.classList.remove('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+</script>
+</body>
+</html>
