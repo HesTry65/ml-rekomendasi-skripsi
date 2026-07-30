@@ -36,16 +36,12 @@ def _get_hf_client():
             _hf_client = HFClient(HF_SPACE, token=HF_TOKEN, httpx_kwargs={"timeout": 300})
         return _hf_client
 
-def get_pkl_path(filename):
-    parent_path = os.path.join(PARENT, filename)
-    if os.path.exists(parent_path):
-        return parent_path
-    return os.path.join(BASE, filename)
+MODELS_DIR = os.path.join(PARENT, "research", "models")
 
-model    = joblib.load(get_pkl_path("model_c45.pkl"))
-le_body  = joblib.load(get_pkl_path("le_body.pkl"))
-mlb      = joblib.load(get_pkl_path("mlb_gaya.pkl"))
-le_label = joblib.load(get_pkl_path("le_label.pkl"))
+model    = joblib.load(os.path.join(MODELS_DIR, "model_c45.pkl"))
+le_body  = joblib.load(os.path.join(MODELS_DIR, "le_body.pkl"))
+mlb      = joblib.load(os.path.join(MODELS_DIR, "mlb_gaya.pkl"))
+le_label = joblib.load(os.path.join(MODELS_DIR, "le_label.pkl"))
 
 gaya_cols = [f"gaya_{g}" for g in mlb.classes_]
 
