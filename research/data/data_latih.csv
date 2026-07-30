@@ -1,0 +1,156 @@
+body_shape,gaya,rekomendasi
+pear,"[""casual""]",bawahan
+pear,"[""casual"", ""classic"", ""sporty"", ""formal""]",bawahan
+rectangle,"[""classic""]",fullbody
+rectangle,"[""casual""]",atasan
+hourglass,"[""casual""]",fullbody
+rectangle,"[""casual""]",atasan
+rectangle,"[""casual""]",atasan
+hourglass,"[""sporty""]",bawahan
+pear,"[""classic""]",bawahan
+apple,"[""bohemian""]",outer
+apple,"[""bohemian""]",outer
+apple,"[""casual""]",atasan
+rectangle,"[""classic""]",fullbody
+hourglass,"[""formal""]",fullbody
+hourglass,"[""formal""]",fullbody
+hourglass,"[""sporty""]",bawahan
+rectangle,"[""casual""]",atasan
+rectangle,"[""casual""]",atasan
+hourglass,"[""casual"", ""classic""]",fullbody
+pear,"[""casual""]",bawahan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+pear,"[""casual"", ""classic"", ""sporty"", ""formal""]",bawahan
+rectangle,"[""casual"", ""formal""]",atasan
+pear,"[""bohemian"", ""casual""]",bawahan
+pear,"[""casual""]",bawahan
+pear,"[""casual"", ""bohemian""]",bawahan
+rectangle,"[""classic""]",fullbody
+rectangle,"[""casual""]",atasan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+inverted,"[""formal"", ""classic""]",outer
+pear,"[""casual"", ""sporty"", ""classic""]",bawahan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+apple,"[""sporty"", ""casual"", ""classic"", ""bohemian""]",atasan
+hourglass,"[""casual"", ""classic"", ""formal""]",fullbody
+pear,"[""casual""]",bawahan
+pear,"[""casual"", ""bohemian""]",bawahan
+hourglass,"[""formal""]",fullbody
+pear,"[""casual""]",bawahan
+inverted,"[""formal""]",outer
+inverted,"[""casual"", ""classic""]",atasan
+inverted,"[""casual"", ""formal""]",atasan
+hourglass,"[""casual""]",fullbody
+rectangle,"[""casual"", ""bohemian""]",atasan
+rectangle,"[""casual"", ""bohemian"", ""classic""]",atasan
+pear,"[""casual"", ""formal""]",bawahan
+rectangle,"[""casual""]",atasan
+rectangle,"[""casual""]",atasan
+rectangle,"[""classic""]",fullbody
+inverted,"[""casual"", ""classic""]",atasan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+apple,"[""casual""]",atasan
+pear,"[""classic""]",bawahan
+hourglass,"[""casual""]",fullbody
+inverted,"[""casual"", ""bohemian""]",atasan
+pear,"[""casual""]",bawahan
+pear,"[""casual""]",bawahan
+apple,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+pear,"[""classic""]",bawahan
+pear,"[""casual""]",bawahan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+inverted,"[""sporty""]",atasan
+rectangle,"[""classic"", ""bohemian"", ""sporty"", ""formal"", ""casual""]",fullbody
+rectangle,"[""casual""]",atasan
+rectangle,"[""casual"", ""classic""]",atasan
+apple,"[""casual""]",atasan
+pear,"[""classic""]",bawahan
+hourglass,"[""casual""]",fullbody
+hourglass,"[""casual""]",fullbody
+pear,"[""bohemian""]",bawahan
+rectangle,"[""formal""]",fullbody
+rectangle,"[""casual""]",atasan
+hourglass,"[""casual"", ""classic"", ""bohemian""]",atasan
+inverted,"[""classic""]",fullbody
+rectangle,"[""sporty""]",fullbody
+rectangle,"[""casual""]",atasan
+inverted,"[""classic"", ""casual"", ""formal""]",fullbody
+rectangle,"[""bohemian"", ""sporty""]",atasan
+pear,"[""formal"", ""casual""]",bawahan
+rectangle,"[""classic"", ""sporty""]",atasan
+apple,"[""classic"", ""formal"", ""sporty""]",atasan
+hourglass,"[""bohemian"", ""classic""]",outer
+inverted,"[""bohemian""]",outer
+pear,"[""formal""]",fullbody
+pear,"[""casual"", ""classic""]",atasan
+pear,"[""formal"", ""casual""]",bawahan
+apple,"[""formal""]",outer
+apple,"[""classic""]",outer
+apple,"[""classic""]",outer
+pear,"[""sporty""]",bawahan
+apple,"[""sporty""]",atasan
+hourglass,"[""classic""]",fullbody
+pear,"[""sporty""]",bawahan
+hourglass,"[""bohemian""]",atasan
+hourglass,"[""classic""]",fullbody
+apple,"[""formal""]",outer
+inverted,"[""casual""]",bawahan
+pear,"[""casual"", ""classic""]",atasan
+pear,"[""casual""]",bawahan
+apple,"[""casual"", ""classic""]",bawahan
+pear,"[""casual""]",bawahan
+pear,"[""casual""]",bawahan
+rectangle,"[""casual""]",atasan
+pear,"[""casual""]",bawahan
+rectangle,"[""sporty""]",fullbody
+rectangle,"[""classic""]",fullbody
+pear,"[""formal""]",fullbody
+apple,"[""classic""]",outer
+inverted,"[""classic""]",fullbody
+apple,"[""formal""]",outer
+rectangle,"[""bohemian""]",outer
+inverted,"[""bohemian"", ""sporty""]",outer
+pear,"[""classic"", ""sporty""]",outer
+rectangle,"[""casual"", ""sporty""]",outer
+rectangle,"[""bohemian"", ""classic""]",outer
+pear,"[""bohemian"", ""classic""]",outer
+pear,"[""casual"", ""sporty""]",outer
+inverted,"[""classic"", ""sporty""]",outer
+hourglass,"[""casual"", ""sporty""]",outer
+apple,"[""casual"", ""sporty""]",outer
+hourglass,"[""bohemian"", ""casual""]",outer
+inverted,"[""casual""]",bawahan
+apple,"[""casual"", ""bohemian""]",fullbody
+inverted,"[""bohemian"", ""classic""]",fullbody
+apple,"[""casual"", ""formal""]",fullbody
+apple,"[""classic"", ""formal""]",bawahan
+inverted,"[""casual"", ""sporty""]",bawahan
+apple,"[""sporty"", ""bohemian""]",fullbody
+inverted,"[""casual"", ""sporty""]",bawahan
+inverted,"[""bohemian"", ""classic""]",fullbody
+apple,"[""classic"", ""formal""]",bawahan
+hourglass,"[""bohemian"", ""formal""]",atasan
+hourglass,"[""bohemian"", ""formal""]",atasan
+apple,"[""casual"", ""bohemian""]",fullbody
+hourglass,"[""classic"", ""formal""]",outer
+hourglass,"[""formal"", ""sporty""]",bawahan
+apple,"[""classic"", ""formal""]",bawahan
+apple,"[""casual"", ""formal""]",fullbody
+rectangle,"[""casual"", ""classic"", ""sporty""]",bawahan
+hourglass,"[""casual"", ""formal""]",outer
+inverted,"[""casual""]",bawahan
+inverted,"[""casual""]",bawahan
+inverted,"[""casual""]",bawahan
+rectangle,"[""bohemian""]",outer
+rectangle,"[""bohemian""]",outer
+pear,"[""formal""]",fullbody
+rectangle,"[""casual""]",atasan
+pear,"[""casual"", ""bohemian""]",bawahan
