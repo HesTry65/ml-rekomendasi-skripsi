@@ -1,7 +1,7 @@
-requests
 pandas
 scikit-learn
 matplotlib
 joblib
+requests
 python-dotenv
-flask
+imbalanced-learn
