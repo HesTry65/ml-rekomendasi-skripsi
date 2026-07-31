@@ -933,14 +933,9 @@ class Component extends DCLogic {
     if (!garments.length) return;
     this.setState({ tryonLoading: true, tryonError: null });
     try {
-      const response = await fetch('/generate-tryon', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ photo: this.state.tryonPhoto, garments })
-      });
-      const data = await response.json();
-      if (!response.ok || data.error) throw new Error(data.error || 'Gagal generate gambar');
-      this.setState({ tryonResult: data.image, tryonLoading: false });
+      const { generateTryon } = await import('./tryon.js');
+      const image = await generateTryon(this.state.tryonPhoto, garments);
+      this.setState({ tryonResult: image, tryonLoading: false });
     } catch (err) {
       this.setState({ tryonLoading: false, tryonError: err.message || 'Terjadi kesalahan, coba lagi.' });
     }
