@@ -1,4 +1,4 @@
-import { Client, handle_file } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
+import { Client, handle_file } from "https://cdn.jsdelivr.net/npm/@gradio/client@2.4.0/dist/index.min.js";
 import { sortByGarmentOrder, isProbablyBlank } from "./tryon-helpers.js";
 
 const HF_SPACE = "yisol/IDM-VTON";
@@ -44,7 +44,8 @@ export async function generateTryon(photoBase64, garments) {
         seed: 42,
       });
 
-      const outUrl = result.data[0].url;
+      const outUrl = result?.data?.[0]?.url;
+      if (!outUrl) throw new Error("Respons Hugging Face tidak mengandung URL gambar hasil");
       const outRes = await fetch(outUrl);
       currentBlob = await outRes.blob();
       applied.push(g.label || "pakaian");
