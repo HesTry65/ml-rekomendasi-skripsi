@@ -1,5 +1,0 @@
-flask
-joblib
-gradio_client
-requests
-python-dotenv

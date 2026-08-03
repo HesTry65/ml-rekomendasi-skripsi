@@ -1,4 +1,0 @@
-[     599ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'. @ :0
-[     599ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'web-share'. @ :0
-[    2451ms] [INFO] [O11Y] [DatadogRUM] Initialized {service: claude-ai, env: production, version: cbdcff92c2} @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c34d1f91f-ChO6umu6.js:1
-[    4003ms] [ERROR] Not signed in with the identity provider. @ https://claude.ai/login?returnTo=%2Fdesign%2Fp%2F312b2b25-e34c-41d1-896e-3a93e35ce8e2%3Ffile%3Dindex.html:0
