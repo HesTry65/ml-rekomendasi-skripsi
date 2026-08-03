@@ -1,24 +1,15 @@
 {
-  "name": "web",
+  "name": "la-silhouette",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.2.12",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "test": "node --test lib/*.test.ts",
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name=la-silhouette"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.12",
-    "typescript": "^5"
+    "@cloudflare/workers-types": "^4",
+    "typescript": "^5",
+    "wrangler": "^3"
   }
 }
