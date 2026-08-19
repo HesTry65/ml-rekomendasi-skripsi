@@ -1,0 +1,1762 @@
+[
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 0,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 1,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 2,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 3,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 0,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 0,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 0,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "outer"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 0,
+      "gaya_sporty": 1
+    },
+    "expected": "bawahan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 0
+    },
+    "expected": "atasan"
+  },
+  {
+    "input": {
+      "body_shape_enc": 4,
+      "gaya_bohemian": 1,
+      "gaya_casual": 1,
+      "gaya_classic": 1,
+      "gaya_formal": 1,
+      "gaya_sporty": 1
+    },
+    "expected": "fullbody"
+  }
+]

@@ -1,0 +1,339 @@
+{
+  "feature": "body_shape_enc",
+  "threshold": 3.5,
+  "left": {
+    "feature": "body_shape_enc",
+    "threshold": 2.5,
+    "left": {
+      "feature": "gaya_sporty",
+      "threshold": 0.5,
+      "left": {
+        "feature": "gaya_casual",
+        "threshold": 0.5,
+        "left": {
+          "feature": "body_shape_enc",
+          "threshold": 0.5,
+          "left": {
+            "feature": "gaya_classic",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "outer"
+            },
+            "right": {
+              "feature": "gaya_formal",
+              "threshold": 0.5,
+              "left": {
+                "leaf": "outer"
+              },
+              "right": {
+                "leaf": "bawahan"
+              }
+            }
+          },
+          "right": {
+            "feature": "gaya_classic",
+            "threshold": 0.5,
+            "left": {
+              "feature": "body_shape_enc",
+              "threshold": 1.5,
+              "left": {
+                "feature": "gaya_bohemian",
+                "threshold": 0.5,
+                "left": {
+                  "leaf": "fullbody"
+                },
+                "right": {
+                  "leaf": "atasan"
+                }
+              },
+              "right": {
+                "leaf": "outer"
+              }
+            },
+            "right": {
+              "feature": "gaya_formal",
+              "threshold": 0.5,
+              "left": {
+                "feature": "body_shape_enc",
+                "threshold": 1.5,
+                "left": {
+                  "leaf": "fullbody"
+                },
+                "right": {
+                  "leaf": "fullbody"
+                }
+              },
+              "right": {
+                "leaf": "outer"
+              }
+            }
+          }
+        },
+        "right": {
+          "feature": "body_shape_enc",
+          "threshold": 1.5,
+          "left": {
+            "feature": "gaya_classic",
+            "threshold": 0.5,
+            "left": {
+              "feature": "body_shape_enc",
+              "threshold": 0.5,
+              "left": {
+                "feature": "gaya_bohemian",
+                "threshold": 0.5,
+                "left": {
+                  "leaf": "atasan"
+                },
+                "right": {
+                  "leaf": "fullbody"
+                }
+              },
+              "right": {
+                "feature": "gaya_bohemian",
+                "threshold": 0.5,
+                "left": {
+                  "leaf": "fullbody"
+                },
+                "right": {
+                  "leaf": "outer"
+                }
+              }
+            },
+            "right": {
+              "feature": "gaya_bohemian",
+              "threshold": 0.5,
+              "left": {
+                "feature": "body_shape_enc",
+                "threshold": 0.5,
+                "left": {
+                  "leaf": "bawahan"
+                },
+                "right": {
+                  "leaf": "fullbody"
+                }
+              },
+              "right": {
+                "leaf": "atasan"
+              }
+            }
+          },
+          "right": {
+            "feature": "gaya_classic",
+            "threshold": 0.5,
+            "left": {
+              "feature": "gaya_bohemian",
+              "threshold": 0.5,
+              "left": {
+                "feature": "gaya_formal",
+                "threshold": 0.5,
+                "left": {
+                  "leaf": "bawahan"
+                },
+                "right": {
+                  "leaf": "atasan"
+                }
+              },
+              "right": {
+                "leaf": "atasan"
+              }
+            },
+            "right": {
+              "feature": "gaya_formal",
+              "threshold": 0.5,
+              "left": {
+                "leaf": "atasan"
+              },
+              "right": {
+                "leaf": "fullbody"
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "body_shape_enc",
+        "threshold": 0.5,
+        "left": {
+          "feature": "gaya_casual",
+          "threshold": 0.5,
+          "left": {
+            "feature": "gaya_bohemian",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "atasan"
+            },
+            "right": {
+              "leaf": "fullbody"
+            }
+          },
+          "right": {
+            "feature": "gaya_bohemian",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "outer"
+            },
+            "right": {
+              "leaf": "atasan"
+            }
+          }
+        },
+        "right": {
+          "feature": "gaya_casual",
+          "threshold": 0.5,
+          "left": {
+            "feature": "body_shape_enc",
+            "threshold": 1.5,
+            "left": {
+              "leaf": "bawahan"
+            },
+            "right": {
+              "feature": "gaya_classic",
+              "threshold": 0.5,
+              "left": {
+                "leaf": "atasan"
+              },
+              "right": {
+                "leaf": "outer"
+              }
+            }
+          },
+          "right": {
+            "feature": "body_shape_enc",
+            "threshold": 1.5,
+            "left": {
+              "leaf": "outer"
+            },
+            "right": {
+              "leaf": "bawahan"
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "feature": "gaya_sporty",
+      "threshold": 0.5,
+      "left": {
+        "feature": "gaya_formal",
+        "threshold": 0.5,
+        "left": {
+          "feature": "gaya_classic",
+          "threshold": 0.5,
+          "left": {
+            "leaf": "bawahan"
+          },
+          "right": {
+            "feature": "gaya_casual",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "bawahan"
+            },
+            "right": {
+              "leaf": "atasan"
+            }
+          }
+        },
+        "right": {
+          "feature": "gaya_casual",
+          "threshold": 0.5,
+          "left": {
+            "leaf": "fullbody"
+          },
+          "right": {
+            "leaf": "bawahan"
+          }
+        }
+      },
+      "right": {
+        "feature": "gaya_formal",
+        "threshold": 0.5,
+        "left": {
+          "feature": "gaya_classic",
+          "threshold": 0.5,
+          "left": {
+            "feature": "gaya_casual",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "bawahan"
+            },
+            "right": {
+              "leaf": "outer"
+            }
+          },
+          "right": {
+            "feature": "gaya_casual",
+            "threshold": 0.5,
+            "left": {
+              "leaf": "outer"
+            },
+            "right": {
+              "leaf": "bawahan"
+            }
+          }
+        },
+        "right": {
+          "leaf": "bawahan"
+        }
+      }
+    }
+  },
+  "right": {
+    "feature": "gaya_casual",
+    "threshold": 0.5,
+    "left": {
+      "feature": "gaya_bohemian",
+      "threshold": 0.5,
+      "left": {
+        "feature": "gaya_sporty",
+        "threshold": 0.5,
+        "left": {
+          "leaf": "fullbody"
+        },
+        "right": {
+          "feature": "gaya_classic",
+          "threshold": 0.5,
+          "left": {
+            "leaf": "fullbody"
+          },
+          "right": {
+            "leaf": "atasan"
+          }
+        }
+      },
+      "right": {
+        "feature": "gaya_sporty",
+        "threshold": 0.5,
+        "left": {
+          "leaf": "outer"
+        },
+        "right": {
+          "leaf": "atasan"
+        }
+      }
+    },
+    "right": {
+      "feature": "gaya_sporty",
+      "threshold": 0.5,
+      "left": {
+        "leaf": "atasan"
+      },
+      "right": {
+        "feature": "gaya_classic",
+        "threshold": 0.5,
+        "left": {
+          "leaf": "outer"
+        },
+        "right": {
+          "feature": "gaya_formal",
+          "threshold": 0.5,
+          "left": {
+            "leaf": "bawahan"
+          },
+          "right": {
+            "leaf": "fullbody"
+          }
+        }
+      }
+    }
+  }
+}
